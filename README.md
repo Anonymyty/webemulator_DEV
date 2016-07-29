@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # jor1k
 d
 ![jor1k](http://jor1k.com/images/jor1k2.gif)
@@ -40,3 +41,7 @@ Neelabh Gupta [github.com/neelabhg](http://github.com/neelabhg)
 [project demo]: http://s-macke.github.com/jor1k/demos/main.html
 [project issues]: https://github.com/s-macke/jor1k/issues
 [project wiki]: https://github.com/s-macke/jor1k/wiki
+=======
+# webemulator
+idubbztv
+>>>>>>> 423a0aa00d0340917cf28585792cb46347f9f00a

@@ -632,7 +632,7 @@ function TerminalInput(SendChars) {
     this.ALTpressed = false;
     this.SendChars = SendChars;
     this.enabled = true;
-
+    console.log(this.CTRLpressed)
     var iosctrl = document.getElementById("iosctrl")
     iosctrl.addEventListener('click', function() {
         this.CTRLpressed = true;

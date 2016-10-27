@@ -646,6 +646,12 @@ function TerminalInput(SendChars) {
     var checkctrl = document.getElementById("checkctrl")
     checkctrl.addEventListener('click', function() {
         console.log("Press3")
+        if (this.CTRLpressed == false) {
+            alert("? yeah?")
+        }
+        if (this.CTRLpressed == true) {
+            alert("? yeah?")
+        }
     }, false);
 }
 

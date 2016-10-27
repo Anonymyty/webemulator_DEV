@@ -626,9 +626,9 @@ module.exports = LoopSoundBuffer;
 "use strict";
 
 var UTF8 = require('../../lib/utf8');
-
+var CTRLpressed = false;
 function TerminalInput(SendChars) {
-    this.CTRLpressed = false;
+    
     this.ALTpressed = false;
     this.SendChars = SendChars;
     this.enabled = true;

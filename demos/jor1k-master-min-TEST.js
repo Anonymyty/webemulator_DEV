@@ -635,21 +635,21 @@ function TerminalInput(SendChars) {
     console.log(CTRLpressed)
     var iosctrl = document.getElementById("iosctrl")
     iosctrl.addEventListener('click', function() {
-        this.CTRLpressed = true;
+        CTRLpressed = true;
         console.log("Press1")
     }, false);
     var stopiosctrl = document.getElementById("stopiosctrl")
     stopiosctrl.addEventListener('click', function() {
-        this.CTRLpressed = false;
+        CTRLpressed = false;
         console.log("Press2")
     }, false);
     var checkctrl = document.getElementById("checkctrl")
     checkctrl.addEventListener('click', function() {
         console.log("Press3")
-        if (this.CTRLpressed == false) {
+        if (CTRLpressed == false) {
             alert("? yeah?")
         }
-        else if (this.CTRLpressed == true) {
+        else if (CTRLpressed == true) {
             alert("? yeah?")
         }
         else {
@@ -669,7 +669,7 @@ TerminalInput.prototype.OnKeyPress = function(e) {
         return false;
     }
     // Define that the control key has this effect only if special keys have been pressed A..Z a..z. Otherwise some foreign keyboards will not work
-    if ((this.CTRLpressed) && (((key >= 0x41) && (key <= 0x5A)) || ((key >= 0x61) && (key <= 0x7A)))) {
+    if ((CTRLpressed) && (((key >= 0x41) && (key <= 0x5A)) || ((key >= 0x61) && (key <= 0x7A)))) {
         key &= 0x1F;
     }
     this.SendChars(UTF8.UnicodeToUTF8Stream(key));
@@ -683,7 +683,7 @@ TerminalInput.prototype.OnKeyUp = function(e) {
     var keycode = e.keyCode;
     var unicode = e.charCode;
     if (keycode == 17) {
-        this.CTRLpressed = false;
+        CTRLpressed = false;
     } else
     if (keycode == 18) {
         this.ALTpressed = false;
@@ -699,7 +699,7 @@ TerminalInput.prototype.OnKeyDown = function(e) {
     var unicode = e.charCode;
  
     // CTRL + x key handling for chrome 
-    if ((this.CTRLpressed) && (!this.ALTpressed) && (keycode >= 65) && (keycode <= 90)) {
+    if ((CTRLpressed) && (!this.ALTpressed) && (keycode >= 65) && (keycode <= 90)) {
         this.SendChars([(keycode-32) & 0x1F]);
         e.preventDefault();
         return false;
@@ -807,7 +807,7 @@ TerminalInput.prototype.OnKeyDown = function(e) {
         break;
     case 17:
         // CTRL
-        this.CTRLpressed = true;
+        CTRLpressed = true;
         //e.preventDefault();
         //return false;
         return;

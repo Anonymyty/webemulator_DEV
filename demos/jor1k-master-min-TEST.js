@@ -649,8 +649,11 @@ function TerminalInput(SendChars) {
         if (this.CTRLpressed == false) {
             alert("? yeah?")
         }
-        if (this.CTRLpressed == true) {
+        else if (this.CTRLpressed == true) {
             alert("? yeah?")
+        }
+        else {
+            alert("Rip")
         }
     }, false);
 }

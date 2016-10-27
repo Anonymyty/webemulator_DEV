@@ -636,10 +636,12 @@ function TerminalInput(SendChars) {
     var iosctrl = document.getElementById("iosctrl")
     iosctrl.addEventListener('click', function() {
         this.CTRLpressed = true;
+        console.log("Press1")
     }, false);
     var stopiosctrl = document.getElementById("stopiosctrl")
     stopiosctrl.addEventListener('click', function() {
         this.CTRLpressed = false;
+        console.log("Press2")
     }, false);
 }
 

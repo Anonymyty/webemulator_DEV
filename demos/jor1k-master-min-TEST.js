@@ -645,7 +645,7 @@ function TerminalInput(SendChars) {
     }, false);
     var checkctrl = document.getElementById("checkctrl")
     checkctrl.addEventListener('click', function() {
-        console.log("l. " + this.CTRLpressed)
+        console.log("Press3")
     }, false);
 }
 

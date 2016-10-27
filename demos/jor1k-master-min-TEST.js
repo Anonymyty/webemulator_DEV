@@ -647,10 +647,10 @@ function TerminalInput(SendChars) {
     checkctrl.addEventListener('click', function() {
         console.log("Press3")
         if (CTRLpressed == false) {
-            alert("? yeah?")
+            alert("? yeah?" + CTRLpressed)
         }
         else if (CTRLpressed == true) {
-            alert("? yeah?")
+            alert("? yeah?" + CTRLpressed)
         }
         else {
             alert("Rip")

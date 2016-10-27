@@ -643,6 +643,10 @@ function TerminalInput(SendChars) {
         this.CTRLpressed = false;
         console.log("Press2")
     }, false);
+    var devcheckctrl = document.getElementById("dev_checkctrl")
+    devcheckctrl.addEventListener('click', function () {
+        console.log(this.CTRLpressed)
+    }, false)
 }
 
 

@@ -627,9 +627,8 @@ module.exports = LoopSoundBuffer;
 
 var UTF8 = require('../../lib/utf8');
 var CTRLpressed = false;
+var ALTpressed = false;
 function TerminalInput(SendChars) {
-    
-    this.ALTpressed = false;
     this.SendChars = SendChars;
     this.enabled = true;
     console.log(CTRLpressed)
@@ -643,6 +642,19 @@ function TerminalInput(SendChars) {
         CTRLpressed = false;
         console.log("Press2")
     }, false);
+
+
+    var iosalt = document.getElementById("iosalt")
+    iosalt.addEventListener('click', function() {
+        ALTpressed = true;
+        console.log("Press1")
+    }, false);
+    var stopiosalt = document.getElementById("stopiosalt")
+    stopiosalt.addEventListener('click', function() {
+        ALTpressed = false;
+        console.log("Press2")
+    }, false);
+
     var checkctrl = document.getElementById("checkctrl")
     checkctrl.addEventListener('click', function() {
         console.log("Press3")
@@ -686,7 +698,7 @@ TerminalInput.prototype.OnKeyUp = function(e) {
         CTRLpressed = false;
     } else
     if (keycode == 18) {
-        this.ALTpressed = false;
+        ALTpressed = false;
     }
     return false;
 };
@@ -699,7 +711,7 @@ TerminalInput.prototype.OnKeyDown = function(e) {
     var unicode = e.charCode;
  
     // CTRL + x key handling for chrome 
-    if ((CTRLpressed) && (!this.ALTpressed) && (keycode >= 65) && (keycode <= 90)) {
+    if ((CTRLpressed) && (!ALTpressed) && (keycode >= 65) && (keycode <= 90)) {
         this.SendChars([(keycode-32) & 0x1F]);
         e.preventDefault();
         return false;
@@ -814,7 +826,7 @@ TerminalInput.prototype.OnKeyDown = function(e) {
         break;
     case 18:
         // Alt
-        this.ALTpressed = true;
+        ALTpressed = true;
         return;
         break;
     }

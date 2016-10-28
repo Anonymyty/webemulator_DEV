@@ -645,7 +645,7 @@ function TerminalInput(SendChars) {
     var stopiosctrl = document.getElementById("stopiosctrl")
     stopiosctrl.addEventListener('click', function() {
         CTRLpressed = false;
-        console.log("Press2")
+        alert(CTRLpressed)
     }, false);
     stopiosctrl.addEventListener('touchstart', function() {
         CTRLpressed = false;

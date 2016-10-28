@@ -637,24 +637,40 @@ function TerminalInput(SendChars) {
         CTRLpressed = true;
         console.log("Press1")
     }, false);
+    iosctrl.addEventListener('touchstart', function() {
+        CTRLpressed = true;
+        console.log("Press1")
+    }, false);
+
     var stopiosctrl = document.getElementById("stopiosctrl")
     stopiosctrl.addEventListener('click', function() {
         CTRLpressed = false;
         console.log("Press2")
     }, false);
-
+    stopiosctrl.addEventListener('touchstart', function() {
+        CTRLpressed = false;
+        console.log("Press2")
+    }, false);
 
     var iosalt = document.getElementById("iosalt")
     iosalt.addEventListener('click', function() {
         ALTpressed = true;
         console.log("Press1")
     }, false);
+    iosalt.addEventListener('touchstart', function() {
+        ALTpressed = true;
+        console.log("Press1")
+    }, false);
+
     var stopiosalt = document.getElementById("stopiosalt")
     stopiosalt.addEventListener('click', function() {
         ALTpressed = false;
         console.log("Press2")
     }, false);
-
+    stopiosalt.addEventListener('touchstart', function() {
+        ALTpressed = false;
+        console.log("Press2")
+    }, false);
 
 }
 

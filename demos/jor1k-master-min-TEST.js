@@ -649,7 +649,7 @@ function TerminalInput(SendChars) {
     }, false);
     stopiosctrl.addEventListener('touchstart', function() {
         CTRLpressed = false;
-        console.log("Press2")
+        alert(CTRLpressed)
     }, false);
 
     var iosalt = document.getElementById("iosalt")

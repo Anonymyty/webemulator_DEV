@@ -655,19 +655,7 @@ function TerminalInput(SendChars) {
         console.log("Press2")
     }, false);
 
-    var checkctrl = document.getElementById("checkctrl")
-    checkctrl.addEventListener('click', function() {
-        console.log("Press3")
-        if (CTRLpressed == false) {
-            alert("? yeah?" + CTRLpressed)
-        }
-        else if (CTRLpressed == true) {
-            alert("? yeah?" + CTRLpressed)
-        }
-        else {
-            alert("Rip")
-        }
-    }, false);
+
 }
 
 

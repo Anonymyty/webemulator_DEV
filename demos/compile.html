@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>JOR1K Compiler Demo</title>
+        <title>LuaMini</title>
         <link rel="stylesheet" href="css/default.css">
     </head>
     <body onload="Start()">
     <div class="heading">
-    <a href="http://opencores.org/or1k/"><img src="images/globe.png"/></a>
-    <h1>Web-based C-Compiler demo for <a href='.'>jor1k</a></h1>
+    <!-- <a href="http://opencores.org/or1k/"><img src="images/globe.png"/></a> -->
+    <h1></h1>
     </div>
     
     <div >
@@ -48,26 +48,17 @@
                 </td>
                 <td style="vertical-align: top">
 <div id="code" style="width: 640px; height: 388px; margin-top: 2px">
-// jor1k Example: Client-side C Compiler demo 
-// by Neelabh Gupta and Lawrence Angrave from UIUC
-
-// Compile this program to find the syntax error...
-#include &lt;stdio.h&gt;
-int main() {
-  
-    printf("Hello World!\n");
-    return 0;
-}
+print("This is pretty cool?")
 </div>
 
 <select id="lang" onchange='editor.setValue("");editor.getSession().setMode("ace/mode/"+this.options[this.selectedIndex].value)'>
-  <option value="c_cpp">gcc</option>
+<!--   <option value="c_cpp">gcc</option> -->
   <option value="lua">lua</option>
-  <option value="perl">perl</option>
+<!--   <option value="perl">perl</option>
   <option value="php">php</option>
   <option value="python">python</option>
   <option value="ruby">ruby</option>
-  <option value="sh">sh</option>
+  <option value="sh">sh</option> -->
 </select> options:<input type="text" maxlen=32 id="gccoptions" value="-Wall" /><button type='button' onclick= "RunCode(GetCodeText(),document.getElementById('gccoptions').value);return false;" >Compile and run</button>
 <span style="margin: 0 5px 0 5px" id="gcc-compile-status"></span>
 <span style="margin: 0 5px 0 5px">Errors: <span id="gcc-error-count">0</span> Warnings: <span id="gcc-warning-count">0</span></span>
@@ -83,7 +74,7 @@ Theme<select onchange='editor.setTheme("ace/theme/"+this.options[this.selectedIn
         </table>
        
         </div>
-        <div class="infobox">
+<!--         <div class="infobox">
         <h3>About</h3>
        <ul>This interactive compile demo is by Neelabh Gupta and Lawrence Angrave from UIUC. It uses the ACE editor and jor1k's' gcc to compile the student's C program.</ul>
        <ul>The output of gcc is used to highlight errors in the student's program. </ul>
@@ -94,7 +85,7 @@ Theme<select onchange='editor.setTheme("ace/theme/"+this.options[this.selectedIn
     
        <ul>Lawrence and UIUC students are building a more complete learning environment to playfully learn C and system programming at <a href='http://cs-education.github.io/sys'>cs-education.github.io/sys</a>.</ul>
        <br>
-        </div>
+        </div> -->
 
 <script src="ace-editor-src-min-noconflict/ace.js"></script>
 <script src="jor1k-master-min.js"></script>
@@ -356,6 +347,9 @@ function RunCode(code,gccoptions) {
         SendKeysToJor1k("mv prog.c prog\nclear\n" + lang + " prog\n");
     }
 }
+
+
+// editor.setValue("");editor.getSession().setMode("ace/mode/lua")
 </script>
 
     </body>
